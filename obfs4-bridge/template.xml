@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <TemplateURL>https://github.com/sgraaf/Unraid-Docker-Templates/blob/main/obfs4-bridge/template.xml</TemplateURL>
+  <Category>Network:Other</Category>
+  <DateInstalled>2021-05-31</DateInstalled>
+  <Name>obfs4-bridge</Name>
+  <Description>
+    [b][u][span style='color: #4CAF50;']Description:[/span][/u][/b][br]
+    obfs4-bridge is a container that allows you to run a Tor Bridge relay to help censored users connect to the Tor network.[br][br]
+    [b][u][span style='color: #4CAF50;']Configuration:[/span][/u][/b][br]
+    [b]OR_PORT[/b] Your bridge's onion routing (Tor) port.[br]
+    [b]PT_PORT[/b] Your bridge's obfs4 port.[br]
+    [b]EMAIL[/b] Your email address.[br][br]
+    [b][u][span style='color: #f44336;']Note:[/span][/u][/b][br]
+    [u][li]Make sure that both ports are forwarded in your firewall.[/li][/ul]
+    [u][li]Make sure that you create the DATA_DIR and change its owner before running the container: [code]mkdir /mnt/user/appdata/tor &amp;&amp; chown 101:101 /mnt/user/appdata/tor[/code].[/li][/ul]
+  </Description>
+  <Overview>obfs4-bridge is a container that allows you to run a Tor Bridge relay to help censored users connect to the Tor network.</Overview>
+  <Support>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Support>
+  <Registry>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Registry>
+  <GitHub>https://gitlab.torproject.org/tpo/anti-censorship/docker-obfs4-bridge/</GitHub>
+  <Repository>thetorproject/obfs4-bridge</Repository>
+  <Project>https://community.torproject.org/relay/setup/bridge/docker/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9393</HostPort>
+        <ContainerPort>9393</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9292</HostPort>
+        <ContainerPort>9292</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Value>9393</Value>
+      <Name>OR_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>9292</Value>
+      <Name>PT_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>EMAIL</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/tor</HostDir>
+      <ContainerDir>/var/lib/tor</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI/>
+  <Icon>https://github.com/sgraaf/Unraid-Docker-Templates/blob/main/obfs4-bridge/icon.png</Icon>
+  <DonateText>Help support my work by buying me a coffee or a beer</DonateText>
+  <DonateLink>https://www.paypal.me/sgraaf2</DonateLink>
+  <DonateImg>https://i.imgur.com/VHSkew7.png</DonateImg>
+  <ExtraParams></ExtraParams>
+  <Config Name="OR_PORT" Target="9393" Default="9393" Mode="tcp" Description="Container Port: 9393" Type="Port" Display="always" Required="true" Mask="false">9393</Config>
+  <Config Name="OR_PORT" Target="OR_PORT" Default="9393" Mode="" Description="Container Variable: OR_PORT" Type="Variable" Display="always" Required="true" Mask="false">9393</Config>
+  <Config Name="PT_PORT" Target="9292" Default="9292" Mode="tcp" Description="Container Port: 9292" Type="Port" Display="always" Required="true" Mask="false">9292</Config>
+  <Config Name="PT_PORT" Target="PT_PORT" Default="9292" Mode="" Description="Container Variable: PT_PORT" Type="Variable" Display="always" Required="true" Mask="false">9292</Config>
+  <Config Name="EMAIL" Target="EMAIL" Default="" Mode="" Description="Container Variable: EMAIL" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DATA_DIR" Target="/var/lib/tor" Default="/mnt/user/appdata/tor" Mode="rw" Description="Container Path: /var/lib/tor" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
