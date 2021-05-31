@@ -21,7 +21,8 @@
     * Make sure that you create the DATA_DIR and change its owner before running the container: 
     ```bash
     mkdir /mnt/user/appdata/tor &amp;&amp; chown 101:101 /mnt/user/appdata/tor
-    ```  </Overview>
+    ```
+  </Overview>
   <Support>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Support>
   <Registry>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Registry>
   <GitHub>https://gitlab.torproject.org/tpo/anti-censorship/docker-obfs4-bridge/</GitHub>
