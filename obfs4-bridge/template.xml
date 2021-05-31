@@ -12,10 +12,11 @@
     [b]PT_PORT[/b] Your bridge's obfs4 port.[br]
     [b]EMAIL[/b] Your email address.[br][br]
     [b][u][span style='color: #f44336;']Note:[/span][/u][/b][br]
-    [u][li]Make sure that both ports are forwarded in your firewall.[/li][/ul]
-    [u][li]Make sure that you create the DATA_DIR and change its owner before running the container: [code]mkdir /mnt/user/appdata/tor &amp;&amp; chown 101:101 /mnt/user/appdata/tor[/code].[/li][/ul]
+    [ul][li]Make sure that both ports are forwarded in your firewall.[/li][li]Make sure that you create the DATA_DIR and change its owner before running the container: [code]mkdir /mnt/user/appdata/tor &amp;&amp; chown 101:101 /mnt/user/appdata/tor[/code].[/li][/ul][br][br]
   </Description>
-  <Overview>obfs4-bridge is a container that allows you to run a Tor Bridge relay to help censored users connect to the Tor network.</Overview>
+  <Overview>
+    obfs4-bridge is a container that allows you to run a Tor Bridge relay to help censored users connect to the Tor network.
+  </Overview>
   <Support>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Support>
   <Registry>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Registry>
   <GitHub>https://gitlab.torproject.org/tpo/anti-censorship/docker-obfs4-bridge/</GitHub>
