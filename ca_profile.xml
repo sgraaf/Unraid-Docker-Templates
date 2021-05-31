@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://avatars.githubusercontent.com/u/8904453</Icon>
+  <Profile>
+    I create templates for any Docker containers that I use that are not yet listed on CA.
+  </Profile>
+  <DonateLink>https://www.paypal.me/sgraaf2</DonateLink>
+  <DonateText>Help support my work by buying me a coffee or a beer</DonateText>
+</Maintainer>
