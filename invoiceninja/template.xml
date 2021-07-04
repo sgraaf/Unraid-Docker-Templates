@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>invoiceninja</Name>
+  <Repository>invoiceninja/invoiceninja</Repository>
+  <Registry>https://hub.docker.com/r/invoiceninja/invoiceninja/</Registry>
+  <GitHub>https://github.com/invoiceninja/invoiceninja/</GitHub>
+  <Project>https://www.invoiceninja.org/</Project>
+  <Support>https://hub.docker.com/r/invoiceninja/invoiceninja/</Support>
+  <Overview>Invoice Ninja is an invoicing application built with Laravel &amp; Flutter, which makes sending invoices and receiving payments simple and easy.</Overview>
+  <Category>Productivity: Tools:</Category>
+  <DateInstalled>2021-07-04</DateInstalled>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/invoiceninja/icon.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/invoiceninja/template.xml</TemplateURL>
+  <Config Name="WebUI" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="APP_URL" Target="APP_URL" Default="http://localhost:80" Description="Container Variable: APP_URL" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="APP_KEY" Target="APP_KEY" Default="" Description="Container Variable: APP_KEY" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DB_TYPE" Target="DB_TYPE" Default="mysql" Description="Container Variable: DB_TYPE" Type="Variable" Display="always" Required="true" Mask="false">mysql</Config>
+  <Config Name="DB_HOST" Target="DB_HOST" Default="" Description="Container Variable: DB_HOST" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DB_DATABASE" Target="DB_DATABASE" Default="" Description="Container Variable: DB_DATABASE" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DB_USERNAME" Target="DB_USERNAME" Default="" Description="Container Variable: DB_USERNAME" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="DB_PASSWORD" Target="DB_PASSWORD" Default="" Description="Container Variable: DB_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MAIL_DRIVER" Target="MAIL_DRIVER" Default="smtp" Description="Container Variable: MAIL_DRIVER" Type="Variable" Display="always" Required="false" Mask="false">smtp</Config>
+  <Config Name="MAIL_PORT" Target="MAIL_PORT" Default="587" Description="Container Variable: MAIL_PORT" Type="Variable" Display="always" Required="false" Mask="false">587</Config>
+  <Config Name="MAIL_ENCRYPTION" Target="MAIL_ENCRYPTION" Default="tls" Description="Container Variable: MAIL_ENCRYPTION" Type="Variable" Display="always" Required="false" Mask="false">tls</Config>
+  <Config Name="MAIL_HOST" Target="MAIL_HOST" Default="" Description="Container Variable: MAIL_HOST" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MAIL_USERNAME" Target="MAIL_USERNAME" Default="" Description="Container Variable: MAIL_USERNAME" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MAIL_FROM_ADDRESS" Target="MAIL_FROM_ADDRESS" Default="" Description="Container Variable: MAIL_FROM_ADDRESS" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MAIL_FROM_NAME" Target="MAIL_FROM_NAME" Default="" Description="Container Variable: MAIL_FROM_NAME" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MAIL_PASSWORD" Target="MAIL_PASSWORD" Default="" Description="Container Variable: MAIL_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="APP_ENV" Target="APP_ENV" Default="production" Description="Container Variable: APP_ENV" Type="Variable" Display="advanced-hide" Required="true" Mask="false">production</Config>
+  <Config Name="APP_DEBUG" Target="APP_DEBUG" Default="0" Description="Container Variable: APP_DEBUG" Type="Variable" Display="advanced-hide" Required="true" Mask="false">0</Config>
+  <Config Name="APP_CIPHER" Target="APP_CIPHER" Default="AES-256-CBC" Description="Container Variable: APP_CIPHER" Type="Variable" Display="advanced-hide" Required="false" Mask="false">AES-256-CBC</Config>
+  <Config Name="APP_LOCALE" Target="APP_LOCALE" Default="en" Description="Container Variable: APP_LOCALE" Type="Variable" Display="advanced-hide" Required="false" Mask="false">en</Config>
+  <Config Name="DB_STRICT" Target="DB_STRICT" Default="false" Description="Container Variable: DB_STRICT" Type="Variable" Display="advanced-hide" Required="true" Mask="false">false</Config>
+  <Config Name="PHANTOMJS_CLOUD_KEY" Target="PHANTOMJS_CLOUD_KEY" Default="a-demo-key-with-low-quota-per-ip-address" Description="Container Variable: PHANTOMJS_CLOUD_KEY" Type="Variable" Display="advanced-hide" Required="false" Mask="false">a-demo-key-with-low-quota-per-ip-address</Config>
+  <Config Name="PUBLIC_DIR" Target="/var/app/public" Default="/mnt/user/appdata/invoiceninja/public" Mode="rw" Description="Container Path: /var/app/public" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+  <Config Name="STORAGE_DIR" Target="/var/app/storage" Default="/mnt/user/appdata/invoiceninja/storage" Mode="rw" Description="Container Path: /var/app/storage" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+</Container>
