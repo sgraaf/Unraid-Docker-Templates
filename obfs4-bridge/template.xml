@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Container version="2">
-  <TemplateURL>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/obfs4-bridge/template.xml</TemplateURL>
+  <TemplateURL>
+    https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/obfs4-bridge/template.xml
+  </TemplateURL>
   <Category>Network:Other</Category>
   <DateInstalled>2021-05-31</DateInstalled>
   <Name>obfs4-bridge</Name>
   <Description>
-    obfs4-bridge is a container that allows you to run a Tor Bridge relay to help censored users connect to the Tor network.
+    obfs4-bridge is a container that allows you to run a Tor Bridge relay to
+    help censored users connect to the Tor network.
   </Description>
   <Overview>
 Description:
@@ -20,9 +23,13 @@ Note:
 - Make sure that both ports are forwarded in your firewall.
 - Make sure that you create the DATA_DIR and change its owner before running the container: `mkdir /mnt/user/appdata/tor &amp;&amp; chown 101:101 /mnt/user/appdata/tor`.
   </Overview>
-  <Support>https://forums.unraid.net/topic/109506-support-sgraaf-obfs4-bridge/</Support>
+  <Support>
+    https://forums.unraid.net/topic/109506-support-sgraaf-obfs4-bridge/
+  </Support>
   <Registry>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Registry>
-  <GitHub>https://gitlab.torproject.org/tpo/anti-censorship/docker-obfs4-bridge/</GitHub>
+  <GitHub>
+    https://gitlab.torproject.org/tpo/anti-censorship/docker-obfs4-bridge/
+  </GitHub>
   <Repository>thetorproject/obfs4-bridge</Repository>
   <Project>https://community.torproject.org/relay/setup/bridge/docker/</Project>
   <BindTime>true</BindTime>
@@ -46,27 +53,27 @@ Note:
     <Variable>
       <Value>9393</Value>
       <Name>OR_PORT</Name>
-      <Mode/>
+      <Mode />
     </Variable>
     <Variable>
       <Value>9292</Value>
       <Name>PT_PORT</Name>
-      <Mode/>
+      <Mode />
     </Variable>
     <Variable>
-      <Value/>
+      <Value />
       <Name>EMAIL</Name>
-      <Mode/>
+      <Mode />
     </Variable>
     <Variable>
       <Value>0</Value>
       <Name>OBFS4_ENABLE_ADDITIONAL_VARIABLES</Name>
-      <Mode/>
+      <Mode />
     </Variable>
     <Variable>
       <Value>0</Value>
       <Name>OBFS4V_AddressDisableIPv6</Name>
-      <Mode/>
+      <Mode />
     </Variable>
   </Environment>
   <Data>
@@ -76,15 +83,109 @@ Note:
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI/>
-  <Icon>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/obfs4-bridge/icon.png</Icon>
-  <ExtraParams></ExtraParams>
-  <Config Name="OR_PORT" Target="9393" Default="9393" Mode="tcp" Description="Container Port: 9393" Type="Port" Display="always" Required="true" Mask="false">9393</Config>
-  <Config Name="OR_PORT" Target="OR_PORT" Default="9393" Mode="" Description="Container Variable: OR_PORT" Type="Variable" Display="always" Required="true" Mask="false">9393</Config>
-  <Config Name="PT_PORT" Target="9292" Default="9292" Mode="tcp" Description="Container Port: 9292" Type="Port" Display="always" Required="true" Mask="false">9292</Config>
-  <Config Name="PT_PORT" Target="PT_PORT" Default="9292" Mode="" Description="Container Variable: PT_PORT" Type="Variable" Display="always" Required="true" Mask="false">9292</Config>
-  <Config Name="EMAIL" Target="EMAIL" Default="" Mode="" Description="Container Variable: EMAIL" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="Enable additional variables" Target="OBFS4_ENABLE_ADDITIONAL_VARIABLES" Default="0" Mode="" Description="Container Variable: OBFS4_ENABLE_ADDITIONAL_VARIABLES" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-  <Config Name="Disable IPv6" Target="OBFS4V_AddressDisableIPv6" Default="0" Mode="" Description="Container Variable: OBFS4V_AddressDisableIPv6" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-  <Config Name="DATA_DIR" Target="/var/lib/tor" Default="/mnt/user/appdata/tor" Mode="rw" Description="Container Path: /var/lib/tor" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+  <WebUI />
+  <Icon>
+    https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/obfs4-bridge/icon.png
+  </Icon>
+  <ExtraParams />
+  <Config
+    Name="OR_PORT"
+    Target="9393"
+    Default="9393"
+    Mode="tcp"
+    Description="Container Port: 9393"
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >
+    9393
+  </Config>
+  <Config
+    Name="OR_PORT"
+    Target="OR_PORT"
+    Default="9393"
+    Mode=""
+    Description="Container Variable: OR_PORT"
+    Type="Variable"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >
+    9393
+  </Config>
+  <Config
+    Name="PT_PORT"
+    Target="9292"
+    Default="9292"
+    Mode="tcp"
+    Description="Container Port: 9292"
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >
+    9292
+  </Config>
+  <Config
+    Name="PT_PORT"
+    Target="PT_PORT"
+    Default="9292"
+    Mode=""
+    Description="Container Variable: PT_PORT"
+    Type="Variable"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >
+    9292
+  </Config>
+  <Config
+    Name="EMAIL"
+    Target="EMAIL"
+    Default=""
+    Mode=""
+    Description="Container Variable: EMAIL"
+    Type="Variable"
+    Display="always"
+    Required="true"
+    Mask="false"
+  />
+  <Config
+    Name="Enable additional variables"
+    Target="OBFS4_ENABLE_ADDITIONAL_VARIABLES"
+    Default="0"
+    Mode=""
+    Description="Container Variable: OBFS4_ENABLE_ADDITIONAL_VARIABLES"
+    Type="Variable"
+    Display="always"
+    Required="false"
+    Mask="false"
+  >
+    0
+  </Config>
+  <Config
+    Name="Disable IPv6"
+    Target="OBFS4V_AddressDisableIPv6"
+    Default="0"
+    Mode=""
+    Description="Container Variable: OBFS4V_AddressDisableIPv6"
+    Type="Variable"
+    Display="always"
+    Required="false"
+    Mask="false"
+  >
+    0
+  </Config>
+  <Config
+    Name="DATA_DIR"
+    Target="/var/lib/tor"
+    Default="/mnt/user/appdata/tor"
+    Mode="rw"
+    Description="Container Path: /var/lib/tor"
+    Type="Path"
+    Display="advanced-hide"
+    Required="true"
+    Mask="false"
+  />
 </Container>
