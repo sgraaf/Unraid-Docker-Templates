@@ -1,93 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Container version="2">
-  <TemplateURL>
-    https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/obfs4-bridge/template.xml
-  </TemplateURL>
-  <Category>Network:Other</Category>
-  <DateInstalled>2021-05-31</DateInstalled>
   <Name>obfs4-bridge</Name>
-  <Description>
-    obfs4-bridge is a container that allows you to run a Tor Bridge relay to
-    help censored users connect to the Tor network.
-  </Description>
-  <Overview>
-Description:
-obfs4-bridge is a container that allows you to run a Tor Bridge relay to help censored users connect to the Tor network.
-
-Configuration:
-- OR_PORT: Your bridge's onion routing (Tor) port.
-- PT_PORT: Your bridge's obfs4 port.
-- EMAIL: Your email address.
-
-Note:
-- Make sure that both ports are forwarded in your firewall.
-- Make sure that you create the DATA_DIR and change its owner before running the container: `mkdir /mnt/user/appdata/tor &amp;&amp; chown 101:101 /mnt/user/appdata/tor`.
-  </Overview>
+  <Repository>thetorproject/obfs4-bridge</Repository>
+  <Registry>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Registry>
+  <Network>bridge</Network>
   <Support>
     https://forums.unraid.net/topic/109506-support-sgraaf-obfs4-bridge/
   </Support>
-  <Registry>https://hub.docker.com/r/thetorproject/obfs4-bridge/</Registry>
+  <Project>https://community.torproject.org/relay/setup/bridge/docker/</Project>
   <GitHub>
     https://gitlab.torproject.org/tpo/anti-censorship/docker-obfs4-bridge/
   </GitHub>
-  <Repository>thetorproject/obfs4-bridge</Repository>
-  <Project>https://community.torproject.org/relay/setup/bridge/docker/</Project>
-  <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>9393</HostPort>
-        <ContainerPort>9393</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>9292</HostPort>
-        <ContainerPort>9292</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Environment>
-    <Variable>
-      <Value>9393</Value>
-      <Name>OR_PORT</Name>
-      <Mode />
-    </Variable>
-    <Variable>
-      <Value>9292</Value>
-      <Name>PT_PORT</Name>
-      <Mode />
-    </Variable>
-    <Variable>
-      <Value />
-      <Name>EMAIL</Name>
-      <Mode />
-    </Variable>
-    <Variable>
-      <Value>0</Value>
-      <Name>OBFS4_ENABLE_ADDITIONAL_VARIABLES</Name>
-      <Mode />
-    </Variable>
-    <Variable>
-      <Value>0</Value>
-      <Name>OBFS4V_AddressDisableIPv6</Name>
-      <Mode />
-    </Variable>
-  </Environment>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/tor</HostDir>
-      <ContainerDir>/var/lib/tor</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
+  <Overview
+  >obfs4-bridge is a container that allows you to run a Tor Bridge relay to help censored users connect to the Tor network.&#xD;
+&#xD;
+Configuration:&#xD;
+- OR_PORT: Your bridge's onion routing (Tor) port.&#xD;
+- PT_PORT: Your bridge's obfs4 port.&#xD;
+- EMAIL: Your email address.&#xD;
+&#xD;
+Note:&#xD;
+- Make sure that both ports are forwarded in your firewall.&#xD;
+- Make sure that you create the DATA_DIR and change its owner before running the container: `mkdir /mnt/user/appdata/tor &amp;&amp; chown 101:101 /mnt/user/appdata/tor`.
+  </Overview>
+  <Category>Network:Other</Category>
   <WebUI />
+  <TemplateURL>
+    https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/obfs4-bridge/template.xml
+  </TemplateURL>
   <Icon>
     https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/obfs4-bridge/icon.png
   </Icon>
-  <ExtraParams />
   <Config
     Name="OR_PORT"
     Target="9393"

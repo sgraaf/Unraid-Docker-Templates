@@ -1,39 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Container version="2">
+  <Name>Apache-Tika-Server</Name>
+  <Repository>ghcr.io/paperless-ngx/tika:latest</Repository>
+  <Registry>https://github.com/paperless-ngx/tika/pkgs/container/tika</Registry>
+  <Network>bridge</Network>
+  <Support>https://github.com/paperless-ngx/tika</Support>
+  <Project>https://tika.apache.org/</Project>
+  <GitHub>https://github.com/apache/tika/</GitHub>
+  <Overview
+  >Apache Tika(TM) is a toolkit for detecting and extracting metadata and structured text content from various documents using existing parser libraries.
+&#xD;
+This template has been pre-configured for use with Paperless-ngx.
+  </Overview>
+  <Category>Productivity:</Category>
+  <WebUI />
   <TemplateURL>
     https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/tika/template.xml
   </TemplateURL>
-  <Category>Productivity:</Category>
-  <DateInstalled>2023-02-26</DateInstalled>
-  <Name>Apache-Tika-Server</Name>
-  <Description>
-    Apache Tika(TM) is a toolkit for detecting and extracting metadata and
-    structured text content from various documents using existing parser
-    libraries.
-  </Description>
-  <Overview>
-    Apache Tika(TM) is a toolkit for detecting and extracting metadata and
-    structured text content from various documents using existing parser
-    libraries.
-  </Overview>
-  <Support>https://github.com/paperless-ngx/tika</Support>
-  <Registry>https://github.com/paperless-ngx/tika/pkgs/container/tika</Registry>
-  <GitHub>https://github.com/apache/tika/</GitHub>
-  <Repository>ghcr.io/paperless-ngx/tika:latest</Repository>
-  <Project>https://tika.apache.org/</Project>
-  <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>9998</HostPort>
-        <ContainerPort>9998</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <WebUI />
   <Icon>
     https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/tika/icon.png
   </Icon>
