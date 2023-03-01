@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Container version="2">
+  <TemplateURL>
+    https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/gotenberg/template.xml
+  </TemplateURL>
+  <Category>Productivity:</Category>
+  <DateInstalled>2023-02-26</DateInstalled>
+  <Name>gotenberg</Name>
+  <Description>A Docker-powered stateless API for PDF files</Description>
+  <Overview>
+    Gotenberg provides a developer-friendly API to interact with powerful tools
+    like Chromium and LibreOffice for converting numerous document
+    formats (HTML, Markdown, Word, Excel, etc.) into PDF files, and more!
+
+    This template has been pre-configured for use with Paperless-ngx.
+  </Overview>
+  <Support>https://hub.docker.com/r/gotenberg/gotenberg/</Support>
+  <Registry>https://hub.docker.com/r/gotenberg/gotenberg/</Registry>
+  <GitHub>https://github.com/gotenberg/gotenberg/</GitHub>
+  <Repository>gotenberg/gotenberg</Repository>
+  <Project>https://gotenberg.dev/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3000</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <WebUI />
+  <Icon>
+    https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/gotenberg/icon.png
+  </Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs>
+    gotenberg --chromium-disable-javascript=true --chromium-allow-list=file:///tmp/.*
+  </PostArgs>
+  <Config
+    Name="Gotenberg API Port"
+    Target="3000"
+    Default="3000"
+    Mode="tcp"
+    Description="Container Port: 3000"
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false"
+  >
+    3000
+  </Config>
+</Container>
