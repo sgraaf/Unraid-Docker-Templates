@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Container version="2">
+  <Name>windmill</Name>
+  <Repository>ghcr.io/windmill-labs/windmill:main</Repository>
+  <Registry>https://github.com/windmill-labs/windmill/pkgs/container/windmill</Registry>
+  <Network>bridge</Network>
+  <Support>https://github.com/windmill-labs/windmill</Support>
+  <Project>https://www.windmill.dev/</Project>
+  <GitHub>https://github.com/windmill-labs/windmill</GitHub>
+  <Overview>Windmill is a fast, open-source workflow engine and developer platform. It's an alternative to the likes of Retool, Superblocks, n8n, Airflow, Prefect, and Temporal, designed to build comprehensive internal tools (endpoints, workflows, UIs). It supports coding in TypeScript, Python, Go, PHP, Bash, SQL, or any Docker image, alongside intuitive low-code builders.</Overview>
+  <Category>HomeAutomation: Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/windmill/template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/windmill/icon.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <Requires>Postgres &gt;= 16</Requires>
+  <Config Name="Port: Web Interface" Target="8000" Default="8000" Mode="tcp" Description="This is the Web UI port for the application." Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Port: Email Triggers" Target="2525" Default="2525" Mode="tcp" Description="This is the port used for Email triggers." Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Path: /tmp/windmill/logs" Target="/tmp/windmill/logs" Default="/mnt/user/appdata/windmill/logs" Mode="rw" Description="This is the container path to the worker logs." Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Path: /tmp/windmill/cache" Target="/tmp/windmill/cache" Default="/mnt/user/appdata/windmill/cache" Mode="rw" Description="This is the container path to the worker dependency cache." Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Path: /var/run/docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Mount the docker socket to allow to run docker containers from within the workers." Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Variable: DATABASE_URL" Target="DATABASE_URL" Default="postgres://windmill:[password]>@[host]:5432/windmill?sslmode=disable" Description="The Postgres database url." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Variable: WORKER_GROUP" Target="WORKER_GROUP" Default="default" Description="The worker group the worker belongs to and get its configuration pulled from." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Variable: MODE" Target="MODE" Default="standalone|worker|server" Description="The mode if the binary." Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>
