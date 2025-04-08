@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Container version="2">
+  <Name>chrome</Name>
+  <Repository>zenika/alpine-chrome</Repository>
+  <Registry>https://hub.docker.com/r/zenika/alpine-chrome/</Registry>
+  <Network>bridge</Network>
+  <Support>https://github.com/jlandure/alpine-chrome</Support>
+  <Project>https://hub.docker.com/r/zenika/alpine-chrome/</Project>
+  <GitHub>https://github.com/jlandure/alpine-chrome</GitHub>
+  <Overview>Chrome running in headless mode in a tiny Alpine image.</Overview>
+  <Category>Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:9222]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/chrome/template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/chrome/icon.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs>--no-sandbox --disable-gpu --disable-dev-shm-usage --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 --hide-scrollbars</PostArgs>
+  <Config Name="Port: WebUI" Target="9222" Default="9222" Mode="tcp" Description="chrome WebUI port." Type="Port" Display="always-hide" Required="true" Mask="false"/>
+</Container>

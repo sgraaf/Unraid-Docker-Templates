@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>Apache-Tika-Server</Name>
   <Repository>ghcr.io/paperless-ngx/tika:latest</Repository>
-  <Registry>https://github.com/paperless-ngx/tika/pkgs/container/tika</Registry>
+  <Registry>https://github.com/orgs/paperless-ngx/packages/container/package/tika</Registry>
   <Network>bridge</Network>
   <Support>https://github.com/paperless-ngx/tika</Support>
   <Project>https://tika.apache.org/</Project>
