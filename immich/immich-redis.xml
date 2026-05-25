@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Container version="2">
+  <Name>immich-redis</Name>
+  <Repository>docker.io/valkey/valkey:9</Repository>
+  <Registry>https://hub.docker.com/r/valkey/valkey</Registry>
+  <Network>immich</Network>
+  <Support>https://github.com/immich-app/immich/discussions</Support>
+  <Project>https://valkey.io/</Project>
+  <GitHub>https://github.com/valkey-io/valkey-container</GitHub>
+  <Overview>Valkey (Redis-compatible) cache/queue for Immich. This is the "redis" service from the official Immich `docker-compose.yml`. It must be on the same custom Docker network ("immich") as the Immich server so the server can reach it by the container name `immich-redis`. No configuration is required; it has no published ports because it is only used internally by the Immich server over the shared network.</Overview>
+  <Category>Tools: Other:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/immich/immich-redis.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/immich/immich-redis.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+</Container>

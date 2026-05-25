@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Container version="2">
+  <Name>immich-machine-learning</Name>
+  <Repository>ghcr.io/immich-app/immich-machine-learning:release</Repository>
+  <Registry>https://github.com/immich-app/immich/pkgs/container/immich-machine-learning</Registry>
+  <Network>immich</Network>
+  <Support>https://github.com/immich-app/immich/discussions</Support>
+  <Project>https://immich.app/</Project>
+  <Overview>Machine-learning service for Immich (face recognition, smart search, etc). This is the "immich-machine-learning" service from the official Immich docker-compose.yml. It must be on the same custom Docker network ("immich") as the Immich server, which reaches it at http://immich-machine-learning:3003 via the IMMICH_MACHINE_LEARNING_URL setting. It exposes port 3003 only on the internal network (no host port published). For hardware-accelerated inference, switch the repository tag to one of: release-armnn, release-cuda, release-rocm, release-openvino, release-rknn, and add the relevant device(s) - see https://docs.immich.app/features/ml-hardware-acceleration.</Overview>
+  <Category>Tools: Other:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/immich/immich-machine-learning.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/sgraaf/Unraid-Docker-Templates/main/immich/immich-machine-learning.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <Config Name="Model cache" Target="/cache" Default="/mnt/user/appdata/immich/model-cache" Mode="rw" Description="Stores downloaded ML models so they are not re-downloaded on every restart. Equivalent to the named volume 'model-cache' in the compose file." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/immich/model-cache</Config>
+  <Config Name="Timezone" Target="TZ" Default="Europe/Amsterdam" Mode="" Description="Optional timezone, e.g. Europe/Amsterdam or Etc/UTC." Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Amsterdam</Config>
+</Container>
